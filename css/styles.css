@@ -1,0 +1,17 @@
+
+header {
+  background-color: rgb(93, 93, 99);
+  color: white;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+header, body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.site-name {
+  margin-left: 10rem;
+  font-size: 2rem;
+}
