@@ -23,12 +23,7 @@ $form.addEventListener('submit', function (e) {
 
   data.entries.push(data.profile);
 
-  $form.elements.avatarUrl.value = '';
-  $form.elements.username.value = '';
-  $form.elements.fullname.value = '';
-  $form.elements.location.value = '';
-  $form.elements.bio.value = '';
-  $pfpPreview.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $form.reset();
 });
 
 window.addEventListener('beforeunload', function (e) {

@@ -17,8 +17,8 @@
 <body>
   <header>
     <div class="container">
-      <div class="row">
-        <div class="column-full">
+      <div class="row header-text-page">
+        <div class="column-half">
           <p class="site-name">Code Journal</p>
         </div>
       </div>
@@ -27,8 +27,8 @@
   <main>
     <div data-view="edit-profile">
       <div class="container">
-        <div class="row">
-          <div class="column-full">
+        <div class="row header-text-page">
+          <div class="column-half">
             <p class="page-title">Edit Profile</p>
           </div>
         </div>
@@ -61,15 +61,19 @@
             </div>
           </div>
           <div class="row">
-            <div class="column-full bios-textarea">
-              <label>
-                <p>Bios:</p>
-                <textarea name="bio" class="bio-inputs"></textarea>
-              </label>
+            <div class="column-full">
+              <div class="bios-textarea">
+                <label>
+                  <p>Bios:</p>
+                  <textarea name="bio" class="bio-inputs"></textarea>
+                </label>
+              </div>
             </div>
           </div>
-          <div class="column-full button-placement">
-            <button>save</button>
+          <div class="button-placement">
+            <div class="column-half">
+              <button>save</button>
+            </div>
           </div>
         </form>
       </div>

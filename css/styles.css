@@ -13,10 +13,6 @@ header > div.container {
   line-height: 4rem;
 }
 
-header .row {
-  margin: auto 0;
-}
-
 button {
   width: 100px;
   height: 2rem;
@@ -26,13 +22,19 @@ button {
   background-color: rgb(75, 70, 70);
   border-radius: 5%;
   border-style: none;
+  margin-right: 0;
 }
 .column-full {
   display: flex;
   justify-content: flex-start;
 }
 
-.column-full.button-placement {
+.column-half {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button-placement {
     margin: 0;
 }
 
@@ -57,19 +59,48 @@ button {
 
 .bio-inputs {
     height: 60px;
+    margin: 0;
 }
 
-.column-full.bios-textarea {
-  display: flex;
-  justify-content: flex-start;
+
+
+.avatarUrl, .user-name, .full-name, .location, .bio-inputs {
+  width: 17rem;
 }
+
 @media screen and (min-width: 768px) {
+
+  button {
+    margin-left: 70px;
+  }
+
+  .column-full {
+    justify-content: space-evenly;
+  }
+
+  .column-half {
+    justify-content: space-evenly;
+  }
+
+  .avatarUrl, .user-name, .full-name, .location {
+    width: auto;
+  }
   .bio-inputs {
-    width: 600px;
+    width: 650px;
   }
 
-  .column-full.button-placement {
-    margin-left: 500px;
+  .bios-textarea {
+    margin-right: 50px;
   }
 
+  .button-placement {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header-text-page > .column-half {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 65px;
+  }
 }
