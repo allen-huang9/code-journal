@@ -50,6 +50,11 @@ button {
   margin-top: 1rem;
 }
 
+.pfp {
+  width: 17rem;
+  height: 17rem;
+}
+
 .bio-inputs {
     height: 60px;
 }
