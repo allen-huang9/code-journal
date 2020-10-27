@@ -12,13 +12,66 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <span class="site-name">Code Journal</span>
+    <div class="container">
+      <div class="row">
+        <div class="column-full">
+          <p class="site-name">Code Journal</p>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
-    <div data-view="edit-profile"></div>
+    <div data-view="edit-profile">
+      <div class="container">
+        <div class="row">
+          <div class="column-full">
+            <p class="page-title">Edit Profile</p>
+          </div>
+        </div>
+        <form>
+          <div class="row">
+            <div class="column-half">
+              <div class="pfp-preview"></div>
+            </div>
+            <div class="column-half">
+              <div>
+                <label>
+                  <p>Avatar URL</p>
+                  <input required type="text" name="avatarUrl" class="user-inputs">
+                </label>
+                <label>
+                  <p>Username</p>
+                  <input required type="text" name="username" class="user-inputs">
+                </label>
+                <label>
+                  <p>Full Name</p>
+                  <input required type="text" name="fullname" class="user-inputs">
+                </label>
+                <label>
+                  <p>Location</p>
+                  <input required type="text" name="location" class="user-inputs">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full bios-textarea">
+              <label>
+                <p>Bios:</p>
+                <textarea required name="bio" class="bio-inputs"></textarea>
+              </label>
+            </div>
+          </div>
+          <div class="column-full button-placement">
+            <button>save</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
