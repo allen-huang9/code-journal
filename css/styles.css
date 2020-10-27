@@ -62,10 +62,12 @@ button {
     margin: 0;
 }
 
-
-
 .avatarUrl, .user-name, .full-name, .location, .bio-inputs {
   width: 17rem;
+}
+
+[data-view="edit-profile"].hide {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
