@@ -121,8 +121,13 @@ button {
     margin-left: 65px;
   }
 
+  [data-view="edit-profile"].hide {
+    display: none;
+  }
+
   .info.column-half {
     display: flex;
     justify-content: flex-start;
   }
+
 }
