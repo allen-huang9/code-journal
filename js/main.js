@@ -126,10 +126,6 @@ function profilePage(profileData) {
 }
 
 var allDataView = document.querySelectorAll('[data-view]');
-// console.log('data-views: ', allDataView);
-
-// var profileEntries = document.querySelector('[data-view="profile"]');
-// console.log('data-view = profile : ', profileEntries);
 
 function viewSwapping(dataView) {
   for (var i = 0; i < allDataView.length; i++) {
@@ -138,50 +134,16 @@ function viewSwapping(dataView) {
     } else {
       allDataView[i].className = 'show';
 
-      //    console.log('hasChildNodes: ', profileEntries.hasChildNodes());
       if (allDataView[i].getAttribute('data-view') === 'profile') {
         if (allDataView[i].hasChildNodes()) {
           var previousUserEntryPage = document.querySelector('#user-page');
-          //  console.log('previous user page: ', previousUserEntryPage);
+
           allDataView[i].removeChild(previousUserEntryPage);
         }
 
         allDataView[i].appendChild(profilePage(data.entries[data.entries.length - 1]));
-      //  console.log('after append data-view = profile : ', allDataView[i]);
+
       }
     }
   }
-
 }
-
-/*
-  <div class="container">
-    <div class="row header-text-page">
-      <div class="column-half">
-        <p class="profile-name">Name Placeholder</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column-half">
-        <div class="pfp-preview">
-          <img src="images/placeholder-image-square.jpg" class="pfp">
-        </div>
-      </div>
-      <div class="info column-half">
-        <div>
-          <div class="user-profile-info">
-            <img src="images/person-icon.png" class="icons">
-            <p>username</p>
-          </div>
-          <div class="user-profile-info">
-            <img src="images/location-icon.png" class="icons">
-            <p>location</p>
-          </div>
-          <div>
-            <p class="bios-text">aksjdkjasdkjasdkjasd</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
- */
