@@ -115,34 +115,47 @@ function profilePage(profileData) {
   return divRoot;
 }
 
+var editProfileDataView = document.querySelector('[data-view="edit-profile"]');
+var profileDataView = document.querySelector('[data-view="profile"]');
+
+function viewSwapping(dataView) {
+  if (dataView === 'profile') {
+    editProfileDataView.className = 'hide';
+    profileDataView.className = 'show';
+  } else {
+    editProfileDataView.className = 'show';
+    profileDataView.className = 'hide';
+  }
+}
+
 /*
   <div class="container">
-                    <div class="row header-text-page">
-                      <div class="column-half">
-                        <p class="profile-name">Name Placeholder</p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="column-half">
-                        <div class="pfp-preview">
-                          <img src="images/placeholder-image-square.jpg" class="pfp">
-                        </div>
-                      </div>
-                      <div class="info column-half">
-                        <div>
-                          <div class="user-profile-info">
-                            <img src="images/person-icon.png" class="icons">
-                            <p>username</p>
-                          </div>
-                          <div class="user-profile-info">
-                            <img src="images/location-icon.png" class="icons">
-                            <p>location</p>
-                          </div>
-                          <div>
-                            <p class="bios-text">aksjdkjasdkjasdkjasd</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+    <div class="row header-text-page">
+      <div class="column-half">
+        <p class="profile-name">Name Placeholder</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-half">
+        <div class="pfp-preview">
+          <img src="images/placeholder-image-square.jpg" class="pfp">
+        </div>
+      </div>
+      <div class="info column-half">
+        <div>
+          <div class="user-profile-info">
+            <img src="images/person-icon.png" class="icons">
+            <p>username</p>
+          </div>
+          <div class="user-profile-info">
+            <img src="images/location-icon.png" class="icons">
+            <p>location</p>
+          </div>
+          <div>
+            <p class="bios-text">aksjdkjasdkjasdkjasd</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
  */

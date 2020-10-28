@@ -70,6 +70,10 @@ button {
   display: none;
 }
 
+[data-view="profile"].hide {
+  display: none;
+}
+
 .icons {
   width: 2rem;
   height: 2rem;
@@ -122,6 +126,10 @@ button {
   }
 
   [data-view="edit-profile"].hide {
+    display: none;
+  }
+
+  [data-view="profile"].hide {
     display: none;
   }
 
