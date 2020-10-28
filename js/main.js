@@ -34,6 +34,7 @@ window.addEventListener('beforeunload', function (e) {
 function profilePage(profileData) {
   var divRoot = document.createElement('div');
   divRoot.setAttribute('class', 'container');
+  divRoot.setAttribute('id', 'user-page');
 
   var row1 = document.createElement('div');
   row1.setAttribute('class', 'row header-text-page');
@@ -118,14 +119,30 @@ function profilePage(profileData) {
 var allDataView = document.querySelectorAll('[data-view]');
 // console.log('data-views: ', allDataView);
 
+// var profileEntries = document.querySelector('[data-view="profile"]');
+// console.log('data-view = profile : ', profileEntries);
+
 function viewSwapping(dataView) {
   for (var i = 0; i < allDataView.length; i++) {
     if (allDataView[i].getAttribute('data-view') !== dataView) {
       allDataView[i].className = 'hide';
     } else {
       allDataView[i].className = 'show';
+
+      //    console.log('hasChildNodes: ', profileEntries.hasChildNodes());
+      if (allDataView[i].getAttribute('data-view') === 'profile') {
+        if (allDataView[i].hasChildNodes()) {
+          var previousUserEntryPage = document.querySelector('#user-page');
+          //  console.log('previous user page: ', previousUserEntryPage);
+          allDataView[i].removeChild(previousUserEntryPage);
+        }
+
+        allDataView[i].appendChild(profilePage(data.entries[data.entries.length - 1]));
+      //  console.log('after append data-view = profile : ', allDataView[i]);
+      }
     }
   }
+
 }
 
 /*
