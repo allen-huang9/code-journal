@@ -33,6 +33,9 @@ window.addEventListener('beforeunload', function (e) {
 });
 
 document.addEventListener('DOMContentLoaded', function (e) {
+  if (data.entries.length === 0) {
+    return;
+  }
   if (data.entries[data.entries.length - 1].username.trim() === '') {
     viewSwapping('edit-profile');
   } else {
