@@ -38,7 +38,7 @@ button {
     margin: 0;
 }
 
-.site-name, .page-title{
+.site-name, .page-title, .profile-name {
   font-size: 2rem;
   margin: auto 0;
 }
@@ -70,6 +70,21 @@ button {
   display: none;
 }
 
+.icons {
+  width: 2rem;
+  height: 2rem;
+}
+
+.user-profile-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3.5rem;
+}
+
+.user-profile-info > p {
+  margin-left: 10px;
+}
 @media screen and (min-width: 768px) {
 
   button {
@@ -104,5 +119,10 @@ button {
     display: flex;
     justify-content: flex-start;
     margin-left: 65px;
+  }
+
+  .info.column-half {
+    display: flex;
+    justify-content: flex-start;
   }
 }
