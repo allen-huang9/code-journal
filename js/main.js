@@ -115,16 +115,16 @@ function profilePage(profileData) {
   return divRoot;
 }
 
-var editProfileDataView = document.querySelector('[data-view="edit-profile"]');
-var profileDataView = document.querySelector('[data-view="profile"]');
+var allDataView = document.querySelectorAll('[data-view]');
+// console.log('data-views: ', allDataView);
 
 function viewSwapping(dataView) {
-  if (dataView === 'profile') {
-    editProfileDataView.className = 'hide';
-    profileDataView.className = 'show';
-  } else {
-    editProfileDataView.className = 'show';
-    profileDataView.className = 'hide';
+  for (var i = 0; i < allDataView.length; i++) {
+    if (allDataView[i].getAttribute('data-view') !== dataView) {
+      allDataView[i].className = 'hide';
+    } else {
+      allDataView[i].className = 'show';
+    }
   }
 }
 
