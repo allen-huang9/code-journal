@@ -24,6 +24,7 @@ $form.addEventListener('submit', function (e) {
   data.entries.push(data.profile);
 
   $form.reset();
+  viewSwapping('profile');
 });
 
 window.addEventListener('beforeunload', function (e) {
@@ -76,7 +77,7 @@ function profilePage(profileData) {
   userNameInfo.setAttribute('class', 'user-profile-info');
 
   var genericUserIcon = document.createElement('img');
-  genericUserIcon.setAttribute('src', 'images/placeholder-image-square.jpg');
+  genericUserIcon.setAttribute('src', 'images/person-icon.png');
   genericUserIcon.setAttribute('class', 'icons');
 
   var userName = document.createElement('p');
