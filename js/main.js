@@ -16,7 +16,7 @@ if (previousEntries) {
 $form.addEventListener('submit', function (e) {
   e.preventDefault();
   data.profile.avatarUrl = $form.elements.avatarUrl.value;
-  data.profile.username = $form.elements.username.value;
+  data.profile.username = $form.elements.username.value.trim();
   data.profile.fullName = $form.elements.fullname.value;
   data.profile.location = $form.elements.location.value;
   data.profile.bio = $form.elements.bio.value;
@@ -30,6 +30,14 @@ $form.addEventListener('submit', function (e) {
 window.addEventListener('beforeunload', function (e) {
   var stringData = JSON.stringify(data.entries);
   localStorage.setItem('code-journal-local-storage', stringData);
+});
+
+document.addEventListener('DOMContentLoaded', function (e) {
+  if (data.entries[data.entries.length - 1].username.trim() === '') {
+    viewSwapping('edit-profile');
+  } else {
+    viewSwapping('profile');
+  }
 });
 
 function profilePage(profileData) {
