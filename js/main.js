@@ -40,6 +40,17 @@ document.addEventListener('DOMContentLoaded', function (e) {
   }
 });
 
+document.addEventListener('click', function (e) {
+  // console.log('click: ', e.target);
+  if (!e.target.hasAttribute('href')) {
+    // console.log('you did not clicked a link');
+    return;
+  }
+
+  viewSwapping(e.target.getAttribute('data-view'));
+
+});
+
 function profilePage(profileData) {
   var divRoot = document.createElement('div');
   divRoot.setAttribute('class', 'container');
