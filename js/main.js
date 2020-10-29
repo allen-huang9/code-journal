@@ -8,13 +8,9 @@ $avatarUrl.addEventListener('input', function (e) {
 
 var $form = document.querySelector('form');
 var previousEntries = localStorage.getItem('code-journal-local-storage');
-var allEntries = [];
 
 if (previousEntries) {
-  allEntries = JSON.parse(previousEntries);
-  if (allEntries.length > 0) {
-    data = allEntries[allEntries.length - 1];
-  }
+  data = JSON.parse(previousEntries);
 }
 
 $form.addEventListener('submit', function (e) {
@@ -25,19 +21,18 @@ $form.addEventListener('submit', function (e) {
   data.profile.location = $form.elements.location.value;
   data.profile.bio = $form.elements.bio.value;
 
-  allEntries.push(data);
-
   $form.reset();
   viewSwapping('profile');
 });
 
 window.addEventListener('beforeunload', function (e) {
-  var stringData = JSON.stringify(allEntries);
+  var stringData = JSON.stringify(data);
   localStorage.setItem('code-journal-local-storage', stringData);
+
 });
 
 document.addEventListener('DOMContentLoaded', function (e) {
-  console.log('document listener data object: ', data);
+
   if (data.profile.username === '') {
     viewSwapping('edit-profile');
   } else {
