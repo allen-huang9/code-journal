@@ -28,7 +28,6 @@ $form.addEventListener('submit', function (e) {
 window.addEventListener('beforeunload', function (e) {
   var stringData = JSON.stringify(data);
   localStorage.setItem('code-journal-local-storage', stringData);
-  // localStorage.clear();
 });
 
 document.addEventListener('DOMContentLoaded', function (e) {
@@ -41,9 +40,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
 });
 
 document.addEventListener('click', function (e) {
-  // console.log('click: ', e.target);
   if (!e.target.hasAttribute('href')) {
-    // console.log('you did not clicked a link');
+    return;
+  }
+
+  var editProfileForm = document.querySelector('main > div[data-view]');
+  if ($form.elements.username.value.trim() === '' && editProfileForm.className === 'show') {
     return;
   }
 
