@@ -28,7 +28,7 @@ $form.addEventListener('submit', function (e) {
 window.addEventListener('beforeunload', function (e) {
   var stringData = JSON.stringify(data);
   localStorage.setItem('code-journal-local-storage', stringData);
-
+  // localStorage.clear();
 });
 
 document.addEventListener('DOMContentLoaded', function (e) {
@@ -122,6 +122,22 @@ function profilePage(profileData) {
 
   divRoot.appendChild(row2);
 
+  var row3 = document.createElement('div');
+  row3.setAttribute('class', 'button-placement');
+
+  var row3Column1 = document.createElement('div');
+  row3Column1.setAttribute('class', 'column-half');
+
+  var linkButton = document.createElement('a');
+  linkButton.setAttribute('class', 'edit-profile-link');
+  linkButton.setAttribute('href', '#');
+  linkButton.setAttribute('data-view', 'edit-profile');
+  linkButton.textContent = 'EDIT';
+
+  row3Column1.appendChild(linkButton);
+  row3.appendChild(row3Column1);
+
+  divRoot.appendChild(row3);
   return divRoot;
 }
 
@@ -143,6 +159,12 @@ function viewSwapping(dataView) {
 
         allDataView[i].appendChild(profilePage(data.profile));
 
+      } else {
+        $form.elements.avatarUrl.value = data.profile.avatarUrl;
+        $form.elements.username.value = data.profile.username;
+        $form.elements.fullname.value = data.profile.fullName;
+        $form.elements.location.value = data.profile.location;
+        $form.elements.bio.value = data.profile.bio;
       }
     }
   }
