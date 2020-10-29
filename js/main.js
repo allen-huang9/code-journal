@@ -12,7 +12,9 @@ var allEntries = [];
 
 if (previousEntries) {
   allEntries = JSON.parse(previousEntries);
-  data = allEntries[allEntries.length - 1];
+  if (allEntries.length > 0) {
+    data = allEntries[allEntries.length - 1];
+  }
 }
 
 $form.addEventListener('submit', function (e) {
@@ -35,6 +37,7 @@ window.addEventListener('beforeunload', function (e) {
 });
 
 document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('document listener data object: ', data);
   if (data.profile.username === '') {
     viewSwapping('edit-profile');
   } else {
