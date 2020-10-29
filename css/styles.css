@@ -5,7 +5,7 @@ header {
   height: 4rem;
 }
 
-header, body {
+header, body, .profile-link {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -22,7 +22,6 @@ button {
   background-color: rgb(75, 70, 70);
   border-radius: 5%;
   border-style: none;
-  margin-right: 0;
 }
 .column-full {
   display: flex;
@@ -32,10 +31,6 @@ button {
 .column-half {
   display: flex;
   justify-content: flex-start;
-}
-
-.button-placement {
-    margin: 0;
 }
 
 .site-name, .page-title, .profile-name {
@@ -84,6 +79,25 @@ button {
 
 .user-profile-info > p {
   margin-left: 10px;
+}
+
+.edit-profile-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 2rem;
+  color: whitesmoke;
+  background-color: rgb(75, 70, 70);
+  border-radius: 10%;
+  text-decoration: none;
+}
+
+.profile-link {
+  margin-left: 50px;
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
 }
 @media screen and (min-width: 768px) {
 

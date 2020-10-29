@@ -28,7 +28,7 @@ $form.addEventListener('submit', function (e) {
 window.addEventListener('beforeunload', function (e) {
   var stringData = JSON.stringify(data);
   localStorage.setItem('code-journal-local-storage', stringData);
-
+  // localStorage.clear();
 });
 
 document.addEventListener('DOMContentLoaded', function (e) {
@@ -38,6 +38,21 @@ document.addEventListener('DOMContentLoaded', function (e) {
   } else {
     viewSwapping('profile');
   }
+});
+
+var editProfileImage = document.querySelector('img');
+document.addEventListener('click', function (e) {
+  if (!e.target.hasAttribute('href')) {
+    return;
+  }
+
+  if (data.profile.username === '') {
+    viewSwapping('edit-profile');
+  } else {
+    viewSwapping(e.target.getAttribute('data-view'));
+    editProfileImage.setAttribute('src', data.profile.avatarUrl);
+  }
+
 });
 
 function profilePage(profileData) {
@@ -122,10 +137,27 @@ function profilePage(profileData) {
 
   divRoot.appendChild(row2);
 
+  var row3 = document.createElement('div');
+  row3.setAttribute('class', 'button-placement');
+
+  var row3Column1 = document.createElement('div');
+  row3Column1.setAttribute('class', 'column-half');
+
+  var linkButton = document.createElement('a');
+  linkButton.setAttribute('class', 'edit-profile-link');
+  linkButton.setAttribute('href', '#');
+  linkButton.setAttribute('data-view', 'edit-profile');
+  linkButton.textContent = 'EDIT';
+
+  row3Column1.appendChild(linkButton);
+  row3.appendChild(row3Column1);
+
+  divRoot.appendChild(row3);
   return divRoot;
 }
 
-var allDataView = document.querySelectorAll('[data-view]');
+var allDataView = document.querySelectorAll('div[data-view]');
+var currentView;
 
 function viewSwapping(dataView) {
   for (var i = 0; i < allDataView.length; i++) {
@@ -133,17 +165,26 @@ function viewSwapping(dataView) {
       allDataView[i].className = 'hide';
     } else {
       allDataView[i].className = 'show';
+      currentView = allDataView[i];
 
-      if (allDataView[i].getAttribute('data-view') === 'profile') {
-        if (allDataView[i].hasChildNodes()) {
-          var previousUserEntryPage = document.querySelector('#user-page');
-
-          allDataView[i].removeChild(previousUserEntryPage);
-        }
-
-        allDataView[i].appendChild(profilePage(data.profile));
-
-      }
     }
   }
+
+  if (dataView === 'profile') {
+    if (currentView.hasChildNodes()) {
+      var previousUserEntryPage = document.querySelector('#user-page');
+
+      currentView.removeChild(previousUserEntryPage);
+    }
+
+    currentView.appendChild(profilePage(data.profile));
+
+  } else {
+    $form.elements.avatarUrl.value = data.profile.avatarUrl;
+    $form.elements.username.value = data.profile.username;
+    $form.elements.fullname.value = data.profile.fullName;
+    $form.elements.location.value = data.profile.location;
+    $form.elements.bio.value = data.profile.bio;
+  }
+
 }
