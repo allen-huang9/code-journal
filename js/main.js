@@ -152,7 +152,7 @@ function profilePage(profileData) {
   return divRoot;
 }
 
-var allDataView = document.querySelectorAll('[data-view]');
+var allDataView = document.querySelectorAll('div[data-view]');
 
 function viewSwapping(dataView) {
   for (var i = 0; i < allDataView.length; i++) {
