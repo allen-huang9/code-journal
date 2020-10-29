@@ -8,9 +8,11 @@ $avatarUrl.addEventListener('input', function (e) {
 
 var $form = document.querySelector('form');
 var previousEntries = localStorage.getItem('code-journal-local-storage');
+var allEntries = [];
 
 if (previousEntries) {
-  data.entries = JSON.parse(previousEntries);
+  allEntries = JSON.parse(previousEntries);
+  data = allEntries[allEntries.length - 1];
 }
 
 $form.addEventListener('submit', function (e) {
@@ -21,22 +23,19 @@ $form.addEventListener('submit', function (e) {
   data.profile.location = $form.elements.location.value;
   data.profile.bio = $form.elements.bio.value;
 
-  data.entries.push(data.profile);
+  allEntries.push(data);
 
   $form.reset();
   viewSwapping('profile');
 });
 
 window.addEventListener('beforeunload', function (e) {
-  var stringData = JSON.stringify(data.entries);
+  var stringData = JSON.stringify(allEntries);
   localStorage.setItem('code-journal-local-storage', stringData);
 });
 
 document.addEventListener('DOMContentLoaded', function (e) {
-  if (data.entries.length === 0) {
-    return;
-  }
-  if (data.entries[data.entries.length - 1].username.trim() === '') {
+  if (data.profile.username === '') {
     viewSwapping('edit-profile');
   } else {
     viewSwapping('profile');
@@ -144,7 +143,7 @@ function viewSwapping(dataView) {
           allDataView[i].removeChild(previousUserEntryPage);
         }
 
-        allDataView[i].appendChild(profilePage(data.entries[data.entries.length - 1]));
+        allDataView[i].appendChild(profilePage(data.profile));
 
       }
     }

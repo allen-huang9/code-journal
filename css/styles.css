@@ -66,11 +66,7 @@ button {
   width: 17rem;
 }
 
-[data-view="edit-profile"].hide {
-  display: none;
-}
-
-[data-view="profile"].hide {
+.hide {
   display: none;
 }
 
@@ -123,14 +119,6 @@ button {
     display: flex;
     justify-content: flex-start;
     margin-left: 65px;
-  }
-
-  [data-view="edit-profile"].hide {
-    display: none;
-  }
-
-  [data-view="profile"].hide {
-    display: none;
   }
 
   .info.column-half {
