@@ -81,11 +81,11 @@ function profilePage(profileData) {
   row2Column1.setAttribute('class', 'column-half');
 
   var pfpDiv = document.createElement('div');
-  pfpDiv.setAttribute('class', 'pfp-preview');
+  pfpDiv.setAttribute('class', 'image-preview');
 
   var pfpImage = document.createElement('img');
   pfpImage.setAttribute('src', profileData.avatarUrl);
-  pfpImage.setAttribute('class', 'pfp');
+  pfpImage.setAttribute('class', 'image-pic');
 
   pfpDiv.appendChild(pfpImage);
   row2Column1.appendChild(pfpDiv);

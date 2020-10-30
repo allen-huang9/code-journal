@@ -5,7 +5,7 @@ header {
   height: 4rem;
 }
 
-header, body, .profile-link {
+header, body, .nav-bar-link {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -38,7 +38,7 @@ button {
   margin: auto 0;
 }
 
-.pfp-preview {
+.image-preview {
   background-image: url(../images/placeholder-image-square.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,12 +47,12 @@ button {
   margin-top: 1rem;
 }
 
-.pfp {
+.image-pic {
   width: 17rem;
   height: 17rem;
 }
 
-.bio-inputs {
+.bio-inputs, .note-inputs {
     height: 60px;
     margin: 0;
 }
@@ -93,8 +93,8 @@ button {
   text-decoration: none;
 }
 
-.profile-link {
-  margin-left: 50px;
+.nav-bar-link {
+  margin-left: 20px;
   color: white;
   font-size: 2rem;
   text-decoration: none;
@@ -116,11 +116,11 @@ button {
   .avatarUrl, .user-name, .full-name, .location {
     width: auto;
   }
-  .bio-inputs {
+  .bio-inputs, .note-inputs {
     width: 650px;
   }
 
-  .bios-textarea {
+  .bios-textarea, .entries-note-textarea {
     margin-right: 50px;
   }
 

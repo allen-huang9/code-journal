@@ -20,7 +20,8 @@
       <div class="row header-text-page">
         <div class="column-half">
           <p class="site-name">Code Journal</p>
-          <a href="#" class="profile-link" data-view="profile">Profile</a>
+          <a href="#" class="nav-bar-link" data-view="profile">Profile</a>
+          <a href="#" class="nav-bar-link" data-view="entries">Entries</a>
         </div>
       </div>
     </div>
@@ -36,8 +37,8 @@
         <form>
           <div class="row">
             <div class="column-half">
-              <div class="pfp-preview">
-                <img src="images/placeholder-image-square.jpg" class="pfp">
+              <div class="image-preview">
+                <img src="images/placeholder-image-square.jpg" class="image-pic">
               </div>
             </div>
             <div class="column-half">
@@ -80,6 +81,59 @@
       </div>
     </div>
     <div data-view="profile" class="hide"></div>
+    <div data-view="entries" class="hide">
+      <div class="container">
+        <div class="row">
+          <div class="column-full">
+            <p>Entries</p>
+            <button>New Entry</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-view="create-entry" class="hide">
+      <div class="container">
+        <div class="row header-text-page">
+          <div class="column-half">
+            <p class="page-title">Create Entry</p>
+          </div>
+        </div>
+        <form>
+          <div class="row">
+            <div class="column-half">
+              <div class="image-preview">
+                <img src="images/placeholder-image-square.jpg" class="image-pic">
+              </div>
+            </div>
+            <div class="column-half">
+              <div>
+                <label>
+                  <p>Image URL</p>
+                  <input required type="text" name="imageUrl">
+                </label>
+                <label>
+                  <p>Title</p>
+                  <input required type="text" name="title">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="column-full">
+            <div class="entries-note-textarea">
+              <label>
+                <p>Notes</p>
+                <textarea name="entries-note" class="note-inputs"></textarea>
+              </label>
+            </div>
+          </div>
+          <div class="button-placement">
+            <div class="column-half">
+              <button>save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
