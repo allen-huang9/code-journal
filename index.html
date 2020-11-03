@@ -17,8 +17,8 @@
 <body>
   <header>
     <div class="container">
-      <div class="row header-text-page">
-        <div class="column-half">
+      <div class="row header-text-page header-margin-left">
+        <div class="column-full">
           <p class="site-name">Code Journal</p>
           <a href="#" class="nav-bar-link" data-view="profile">Profile</a>
           <a href="#" class="nav-bar-link" data-view="entries">Entries</a>
@@ -29,7 +29,7 @@
   <main>
     <div data-view="edit-profile" class="show">
       <div class="container">
-        <div class="row header-text-page">
+        <div class="row header-text-page header-margin-left">
           <div class="column-half">
             <p class="page-title">Edit Profile</p>
           </div>
@@ -83,9 +83,11 @@
     <div data-view="profile" class="hide"></div>
     <div data-view="entries" class="hide">
       <div class="container">
-        <div class="row">
-          <div class="column-full">
-            <p>Entries</p>
+        <div class="row header-text-page">
+          <div class="column-half row-margin-top shrink">
+            <p class="entry-header">Entries</p>
+          </div>
+          <div class="column-half row-margin-top shrink">
             <button>New Entry</button>
           </div>
         </div>
@@ -122,7 +124,7 @@
             <div class="entries-note-textarea">
               <label>
                 <p>Notes</p>
-                <textarea name="entries-note" class="note-inputs"></textarea>
+                <textarea required name="entries-note" class="note-inputs"></textarea>
               </label>
             </div>
           </div>

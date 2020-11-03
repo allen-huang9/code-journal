@@ -33,7 +33,7 @@ button {
   justify-content: flex-start;
 }
 
-.site-name, .page-title, .profile-name {
+.site-name, .page-title, .profile-name, .entry-header{
   font-size: 2rem;
   margin: auto 0;
 }
@@ -99,6 +99,15 @@ button {
   font-size: 2rem;
   text-decoration: none;
 }
+
+.shrink {
+  width: 40%;
+}
+
+.row-margin-top {
+    margin-top: 1rem;
+  }
+
 @media screen and (min-width: 768px) {
 
   button {
@@ -113,6 +122,10 @@ button {
     justify-content: space-evenly;
   }
 
+  .site-name, .page-title, .profile-name, .entry-header {
+    font-size: 2rem;
+    margin: auto 0;
+  }
   .avatarUrl, .user-name, .full-name, .location {
     width: auto;
   }
@@ -129,15 +142,12 @@ button {
     justify-content: flex-end;
   }
 
-  .header-text-page > .column-half {
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 65px;
-  }
-
   .info.column-half {
     display: flex;
     justify-content: flex-start;
   }
 
+  .row-margin-top {
+    margin-top: 1rem;
+  }
 }
